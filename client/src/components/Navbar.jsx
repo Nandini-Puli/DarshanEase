@@ -1,8 +1,10 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   const navigate = useNavigate();
+
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   const username = localStorage.getItem("username");
 
@@ -20,58 +22,58 @@ function Navbar() {
   };
 
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.logo}>
-        <Link to="/" style={styles.logoText}>
+    <nav className="navbar">
+      <div className="logo">
+        <Link to="/" className="logo-text">
           Darshan-Ease
         </Link>
       </div>
 
-      <div style={styles.menu}>
-        <Link to="/" style={styles.link}>
+      <div className="menu">
+        <Link to="/" className="nav-link">
           Home
         </Link>
 
-        <Link to="/temples" style={styles.link}>
+        <Link to="/temples" className="nav-link">
           Temples
         </Link>
 
-        <Link to="/mybookings" style={styles.link}>
+        <Link to="/mybookings" className="nav-link">
           My Bookings
         </Link>
 
-        <Link to="/donations" style={styles.link}>
+        <Link to="/donations" className="nav-link">
           My Donations
         </Link>
 
-        <Link to="/admin-dashboard" style={styles.link}>
+        <Link to="/admin-dashboard" className="nav-link">
           Dashboard
         </Link>
 
-        <Link to="/profile" style={styles.link}>
+        <Link to="/profile" className="nav-link">
           Profile
         </Link>
 
         {isLoggedIn ? (
           <>
-            <span style={styles.username}>
+            <span className="username">
               Welcome, {username}
             </span>
 
             <button
+              className="logout-btn"
               onClick={handleLogout}
-              style={styles.logoutButton}
             >
               Logout
             </button>
           </>
         ) : (
           <>
-            <Link to="/login" style={styles.link}>
+            <Link to="/login" className="nav-link">
               Login
             </Link>
 
-            <Link to="/register" style={styles.registerButton}>
+            <Link to="/register" className="register-btn">
               Register
             </Link>
           </>
@@ -80,71 +82,5 @@ function Navbar() {
     </nav>
   );
 }
-
-const styles = {
-  navbar: {
-    backgroundColor: "#008080",
-    color: "#fff",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "15px 20px",
-    boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-  },
-
-  logo: {
-    display: "flex",
-    alignItems: "center",
-  },
-
-  logoText: {
-    color: "#fff",
-    textDecoration: "none",
-    fontSize: "20px",
-    fontWeight: "bold",
-    letterSpacing: "1px",
-  },
-
-  menu: {
-    display: "flex",
-    alignItems: "center",
-    gap: "25px",
-  },
-
-  link: {
-    color: "#fff",
-    textDecoration: "none",
-    fontSize: "15px",
-    fontWeight: "500",
-  },
-
-  username: {
-    color: "#FFD54F",
-    fontWeight: "bold",
-    fontSize: "15px",
-  },
-
-  logoutButton: {
-    backgroundColor: "#dc3545",
-    color: "#fff",
-    border: "none",
-    padding: "8px 16px",
-    borderRadius: "5px",
-    cursor: "pointer",
-    fontWeight: "600",
-  },
-
-  registerButton: {
-    backgroundColor: "#28a745",
-    color: "#fff",
-    textDecoration: "none",
-    padding: "8px 16px",
-    borderRadius: "5px",
-    fontWeight: "600",
-  },
-};
 
 export default Navbar;
