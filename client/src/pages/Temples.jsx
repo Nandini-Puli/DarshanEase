@@ -90,7 +90,7 @@ function Temples() {
                 style={styles.card}
               >
                 <img
-                src={`http://localhost:5000${temple.image}`}
+                src={`https://darshanease-a82t.onrender.com${temple.image}`}
                 alt={temple.templeName}
                 style={styles.image}
                 onError={(e) => {
