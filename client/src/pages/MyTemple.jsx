@@ -67,7 +67,7 @@ function MyTemple() {
 
 console.log("Temple:", temple);
 console.log("Image:", temple.image);
-console.log("Image URL:", `${import.meta.env.VITE_API_URL.replace("/api", "")}${temple.image}`);
+console.log("Image URL:", `https://darshanease-a82t.onrender.com${temple.image}`);
 
   return (
     <div style={styles.page}>
