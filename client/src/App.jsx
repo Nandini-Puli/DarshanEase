@@ -81,6 +81,7 @@ function App() {
             <Route path="/donations" element={<Donations />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/notifications" element={<Notifications />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
 
           <Route element={<ProtectedRoute roles={["user", "organizer"]} />}>

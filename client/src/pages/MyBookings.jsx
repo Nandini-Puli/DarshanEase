@@ -87,7 +87,7 @@ function MyBookings() {
         <section style={styles.grid}>
           {filteredBookings.map((booking) => (
             <article key={booking._id} style={styles.card}>
-              {booking.templeId?.image && <img src={`http://localhost:5000${booking.templeId.image}`} alt={booking.templeId?.templeName || "Temple"} style={styles.image} />}
+              {booking.templeId?.image && <img src={`https://darshanease-a82t.onrender.com${booking.templeId.image}`} alt={booking.templeId?.templeName || "Temple"} style={styles.image} />}
               <h2>{booking.templeId?.templeName || "Temple"}</h2>
               <p>{booking.slotId?.darshanName || "Darshan"}</p>
               <p><b>Booking date:</b> {new Date(booking.createdAt).toLocaleDateString()}</p>
