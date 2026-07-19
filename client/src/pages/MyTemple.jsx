@@ -85,7 +85,7 @@ console.log("Image URL:", `${import.meta.env.VITE_API_URL.replace("/api", "")}${
 
       <div style={styles.card}>
         <img
-          src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${temple.image}`}
+          src={`https://darshanease-a82t.onrender.com${temple.image}`}
           alt={temple.templeName} style={styles.image}/>
         <div style={styles.content}>
           <h2 style={styles.templeName}>{temple.templeName}</h2>

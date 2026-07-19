@@ -241,7 +241,7 @@ function Home() {
         <img
           src={
             temple.image
-              ? `${import.meta.env.VITE_API_URL.replace("/api", "")}${temple.image}`
+              ? `https://darshanease-a82t.onrender.com${temple.image}`
               : templeBackground
           }
           alt={temple.templeName}
