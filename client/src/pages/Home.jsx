@@ -241,7 +241,7 @@ function Home() {
         <img
           src={
             temple.image
-              ? `http://localhost:5000${temple.image}`
+              ? `${import.meta.env.VITE_API_URL.replace("/api", "")}${temple.image}`
               : templeBackground
           }
           alt={temple.templeName}

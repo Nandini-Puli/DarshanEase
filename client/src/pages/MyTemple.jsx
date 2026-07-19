@@ -67,7 +67,7 @@ function MyTemple() {
 
 console.log("Temple:", temple);
 console.log("Image:", temple.image);
-console.log("Image URL:", `http://localhost:5000/uploads/${temple.image}`);
+console.log("Image URL:", `${import.meta.env.VITE_API_URL.replace("/api", "")}${temple.image}`);
 
   return (
     <div style={styles.page}>
@@ -85,7 +85,7 @@ console.log("Image URL:", `http://localhost:5000/uploads/${temple.image}`);
 
       <div style={styles.card}>
         <img
-          src={`http://localhost:5000${temple.image}`}
+          src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${temple.image}`}
           alt={temple.templeName} style={styles.image}/>
         <div style={styles.content}>
           <h2 style={styles.templeName}>{temple.templeName}</h2>
